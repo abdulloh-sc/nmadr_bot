@@ -1,0 +1,14 @@
+package uz.imaan;
+
+public enum BotState {
+    START,
+    MAIN_MENU,
+    FIRMALAR_ROYXATI,
+    FIRMA_SAHIFASI,
+    MAXSULOTLAR_ROYXATI,
+    SAVAT,
+    REGISTER_ISM,
+    REGISTER_TELEFON,
+    REGISTER_LOKATSIYA,
+    BUYURTMA_TASDIQLASH
+}
