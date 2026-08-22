@@ -7,7 +7,7 @@ public class UserProfile {
     private double lat;
     private double lon;
 
-    public UserProfile(long chatId, String name, String phoneNumber, double lat, double lon) {
+    public UserProfile(long chatId) {
         this.chatId = chatId;
         this.name = name;
         this.phoneNumber = phoneNumber;

@@ -6,7 +6,7 @@ public class UserSession {
     private BotState state;
     private Integer tanlanganFirmaId;
 
-    public UserSession(BotState state) {
+    public UserSession() {
         this.state = BotState.START;
     }
 

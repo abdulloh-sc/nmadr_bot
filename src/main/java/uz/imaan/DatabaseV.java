@@ -64,9 +64,43 @@ public class DatabaseV {
         return null;
     }
 
-    /*public UserSession sessiyaTop(long chatId){
+    public UserSession sessiyaTop(long chatId){
         return sessiyalar.computeIfAbsent(chatId,k -> new UserSession());
+    }
+
+    public void savatgaQoshish(long chatId, Maxsulot maxsulot, int soni){
+        List<CartItem> savat = savatlar.computeIfAbsent(chatId, c -> new ArrayList<>());
+        for (CartItem item : savat){
+            if (item.getMaxsulot().getId() == maxsulot.getId()){
+                item.setQuantity(item.getQuantity() + soni);
+                return;
+            }
+        }
+        savat.add(new CartItem(maxsulot,soni));
+    }
+
+    public List<CartItem> savatniOlish(long chatId){
+        return savatlar.getOrDefault(chatId, new ArrayList<>());
+    }
+
+    /*public double savatJamiNarxi(long chatId){
+        double jami = 0;
+        for (CartItem item : savatgaQoshish(chatId)){
+            jami += item.jamiNarxi();
+
+        }
+        return jami;
     }*/
+
+    public void savatniTozalash(long chatId){
+        savatlar.remove(chatId);
+    }
+
+    public UserProfile profilTop(long chatId){
+        return profillar.computeIfAbsent((int) chatId, c -> new UserProfile(chatId));
+    }
+
+
 
 
 
