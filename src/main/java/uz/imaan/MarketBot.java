@@ -36,7 +36,7 @@ public class MarketBot extends TelegramLongPollingBot {
 //
         if (matn.equals("/start")) {
             sessiya.setState(BotState.MAIN_MENU);
-            yuborish(chatId, "xush kelibsiz");
+            yuborish(chatId, "rayxona dan salooom");
             return;
         }
 
@@ -60,6 +60,7 @@ public class MarketBot extends TelegramLongPollingBot {
     private void handleCallBack(CallbackQuery callback) {
         long chatId = callback.getMessage().getChatId();
         String data = callback.getData();
+        System.out.println("data : " + data);
         UserSession sessiya = db.sessiyaTop(chatId);
 
         String[] qism = data.split(":");
@@ -74,7 +75,7 @@ public class MarketBot extends TelegramLongPollingBot {
                 sessiya.setTanlanganFirmaId(firmaId);
                 maxsulotlarniKKorsatish(chatId, firmaId);
                 break;
-            case "mahsulotlar":
+            case "mahsulot":
                 int fId = Integer.parseInt(qism[1]);
                 int maxsulotId = Integer.parseInt(qism[2]);
                 Maxsulot maxsulot = db.maxsulotTop(fId, maxsulotId);

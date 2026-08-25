@@ -18,7 +18,7 @@ public class KeyboardUtil {
             InlineKeyboardButton btn = new InlineKeyboardButton();
             btn.setText(firma.getName());
 
-            btn.setCallbackData("firma : " + firma.getId());
+            btn.setCallbackData("firma:" + firma.getId());
 
             List<InlineKeyboardButton> row = new ArrayList<>();
             row.add(btn);
@@ -35,7 +35,7 @@ public class KeyboardUtil {
         for (Maxsulot maxsulot : maxsulotlar){
             InlineKeyboardButton btn = new InlineKeyboardButton();
             btn.setText(maxsulot.getName() + " - " + maxsulot.getPrice() + " so'm");
-            btn.setCallbackData("maxsulot : " + maxsulot.getFirmaId() + " : " + maxsulot.getId());
+            btn.setCallbackData("mahsulot:" + maxsulot.getFirmaId() + " : " + maxsulot.getId());
 
             List<InlineKeyboardButton> row = new ArrayList<>();
             row.add(btn);
