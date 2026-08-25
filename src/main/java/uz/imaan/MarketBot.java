@@ -30,6 +30,7 @@ public class MarketBot extends TelegramLongPollingBot {
 //
         if (matn.equals("/start")) {
             sessiya.setState(BotState.MAIN_MENU);
+            yuborish(chatId,"xush kelibsiz");
             return;
         }
 
